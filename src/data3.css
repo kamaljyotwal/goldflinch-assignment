@@ -1,0 +1,27 @@
+.profileCard {
+  border: 3px solid rgb(163, 163, 163);
+  margin: 3px 5px;
+  background-color: rgb(179, 176, 176);
+  font-size: 1.2rem;
+  padding: 10px;
+  border-radius: 6px;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.profileCard:hover {
+  background-color: rgb(150, 148, 148);
+}
+.cardsContainer {
+  min-width: 450px;
+  margin: 0 auto;
+  width: 60%;
+  max-width: 60%;
+}
+.loading {
+  padding-top: 3rem;
+  font-size: 1.5rem;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  color: rgb(43, 43, 43);
+ 
+}
