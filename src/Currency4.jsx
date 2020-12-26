@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { observer } from "mobx-react";
 import "./currency4.css";
 
-const Currency4 = observer(({ store }) => {
+const Currency4 = () => {
   const [responseNumFromAPI, setresponseNumFromAPI] = useState(0);
-  const [inputVal, setinputVal] = useState("");
-  const [result, setresult] = useState(0);
+  const [inputVal, setinputVal] = useState('');
+  const [resultCurrency, setresultCurrency] = useState(0);
 
   let api1 = "https://free.currconv.com/api/v7/convert?q=";
   let api2 = "";
@@ -20,14 +19,14 @@ const Currency4 = observer(({ store }) => {
   }
 
   useEffect(() => {
-    setresult(inputVal * responseNumFromAPI);
+    setresultCurrency(inputVal * responseNumFromAPI);
     // eslint-disable-next-line
   }, [responseNumFromAPI]);
 
-  function handleChange1(e) {
+  function dropdownValue1(e) {
     api2 = e.target.value;
   }
-  function handleChange2(e) {
+  function dropdownValue2(e) {
     api3 = e.target.value;
   }
   function inputgrabber(e) {
@@ -54,7 +53,7 @@ const Currency4 = observer(({ store }) => {
           </button>
         </div>
         <div className="selectorBar">
-          <select id="cars" name="cars" className="selector1" onChange={handleChange1}>
+          <select id="cars" name="cars" className="selector1" onChange={dropdownValue1}>
             <option defaultValue>Select Currency</option>
             <option value="XCD">East Caribbean dollar</option>
             <option value="EUR">European euro</option>
@@ -69,7 +68,7 @@ const Currency4 = observer(({ store }) => {
             <option value="USD">U.S. Dollar</option>
           </select>
           <p className="to">to</p>
-          <select id="cars" name="cars" className="selector2" onChange={handleChange2}>
+          <select id="cars" name="cars" className="selector2" onChange={dropdownValue2}>
             <option defaultValue>Select Currency</option>
             <option value="XCD">East Caribbean dollar</option>
             <option value="EUR">European euro</option>
@@ -84,9 +83,9 @@ const Currency4 = observer(({ store }) => {
             <option value="USD">U.S. Dollar</option>
           </select>
         </div>
-        <div className="resultBar">{result === 0 ? "Result here" : result}</div>
+        <div className="resultBar">{resultCurrency === 0 ? "Result here" : resultCurrency}</div>
       </div>
     </div>
   );
-});
+};
 export default Currency4;

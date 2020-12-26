@@ -15,7 +15,7 @@ const Time2 = observer(({ store }) => {
     <div>
       <h3 style={{ fontSize: "1.2rem", fontFamily: "Arial" }}>This is Time Component</h3>
 
-      <div class='timediv'>{store.curtime}</div>
+      <div className='timediv'>{store.curtime}</div>
     </div>
   );
 });

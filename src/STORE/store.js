@@ -21,14 +21,6 @@ class MainStore {
     cleanUpfunc = () => {
         this.curtime = ''
     }
-    // ====================================================
-    // currency 
-    // inputVal = 0
-    // setinputVal = (e) => {
-    //     this.inputVal = e.target.value
-    // }
-
-
 
 }
 const store = new MainStore();
