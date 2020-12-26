@@ -41,10 +41,10 @@ function App() {
             <Time2 store={store} />
           </Route>
           <Route path="/data">
-            <Data3 />
+            <Data3 store={store} />
           </Route>
           <Route path="/currency">
-            <Currency4 />
+            <Currency4 store={store} />
           </Route>
         </Switch>
       </Router>

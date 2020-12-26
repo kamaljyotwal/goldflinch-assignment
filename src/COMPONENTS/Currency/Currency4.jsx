@@ -1,11 +1,9 @@
-import React, { useState, useEffect } from "react";
+import { observer } from "mobx-react";
+import React, { useEffect } from "react";
 import "./currency4.css";
 
-const Currency4 = () => {
-  const [responseNumFromAPI, setresponseNumFromAPI] = useState(0);
-  const [inputVal, setinputVal] = useState("");
-  const [resultCurrency, setresultCurrency] = useState(0);
-
+const Currency4 = observer(({ store }) => {
+  
   let api1 = "https://free.currconv.com/api/v7/convert?q=";
   let api2 = "";
   let api3 = "";
@@ -15,13 +13,13 @@ const Currency4 = () => {
     const link = api1 + api2 + "_" + api3 + api4;
     fetch(link)
       .then((res) => res.json())
-      .then((res) => setresponseNumFromAPI(Object.values(res)));
+      .then((res) => store.setresponseNumFromAPI(Object.values(res)));
   }
 
   useEffect(() => {
-    setresultCurrency(inputVal * responseNumFromAPI);
+    store.setresultCurrency(store.inputVal, store.responseNumFromAPI);
     // eslint-disable-next-line
-  }, [responseNumFromAPI]);
+  }, [store.responseNumFromAPI]);
 
   // small functions grabbing user input from input/form-components and assigning it to concate to the api address to inquire
   function dropdownValue1(e) {
@@ -31,7 +29,7 @@ const Currency4 = () => {
     api3 = e.target.value;
   }
   function inputgrabber(e) {
-    setinputVal(e.target.value);
+    store.setinputVal(e);
   }
   // -------------------------------------------
 
@@ -48,7 +46,7 @@ const Currency4 = () => {
             placeholder="Amount here"
             min="1"
             onChange={inputgrabber}
-            value={inputVal}
+            value={store.inputVal}
           />
           {/* Submit button */}
           <button className="submitButton" type="submit" onClick={fetchingFunc2}>
@@ -86,9 +84,12 @@ const Currency4 = () => {
             <option value="USD">U.S. Dollar</option>
           </select>
         </div>
-        <div className="resultBar">{resultCurrency === 0 ? "Result here" : resultCurrency}</div>
+        {/* <div className="resultBar">{store.resultCurrency}</div> */}
+        <div className="resultBar">
+          {store.resultCurrency === 0 ? "Result here" : store.resultCurrency}
+        </div>
       </div>
     </div>
   );
-};
+});
 export default Currency4;
