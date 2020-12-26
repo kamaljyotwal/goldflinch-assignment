@@ -1,8 +1,7 @@
-import { observer } from "mobx-react";
 import React, { useState, useEffect } from "react";
 import "./data3.css";
 
-const Data3 = observer(() => {
+const Data3 = () => {
   const apiaddress = "https://randomapi.com/api/6de6abfedb24f889e0b5f675edc50deb?fmt=raw&sole";
   const [apidata, setapidata] = useState([]);
 
@@ -31,6 +30,5 @@ const Data3 = observer(() => {
       )}
     </div>
   );
-});
+};
 export default Data3;
-// <div className="cardsContainer">{mappedData}</div>

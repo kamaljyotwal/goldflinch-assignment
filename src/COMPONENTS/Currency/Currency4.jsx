@@ -3,7 +3,7 @@ import "./currency4.css";
 
 const Currency4 = () => {
   const [responseNumFromAPI, setresponseNumFromAPI] = useState(0);
-  const [inputVal, setinputVal] = useState('');
+  const [inputVal, setinputVal] = useState("");
   const [resultCurrency, setresultCurrency] = useState(0);
 
   let api1 = "https://free.currconv.com/api/v7/convert?q=";
@@ -23,6 +23,7 @@ const Currency4 = () => {
     // eslint-disable-next-line
   }, [responseNumFromAPI]);
 
+  // small functions grabbing user input from input/form-components and assigning it to concate to the api address to inquire
   function dropdownValue1(e) {
     api2 = e.target.value;
   }
@@ -32,6 +33,8 @@ const Currency4 = () => {
   function inputgrabber(e) {
     setinputVal(e.target.value);
   }
+  // -------------------------------------------
+
   return (
     <div>
       <h4 style={{ fontSize: "1.1rem", fontFamily: "Arial" }}>

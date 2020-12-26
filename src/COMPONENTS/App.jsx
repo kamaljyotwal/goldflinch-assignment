@@ -1,10 +1,10 @@
 import "./App.css";
-import Home1 from "./Home1";
-import Time2 from "./Time2";
-import Data3 from "./Data3";
-import Currency4 from "./Currency4";
+import Home1 from "./Home/Home1";
+import Time2 from "./Time/Time2";
+import Data3 from "./Data/Data3";
+import Currency4 from "./Currency/Currency4";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import store from "./STORE/store";
+import store from "../STORE/store";
 
 function App() {
   return (

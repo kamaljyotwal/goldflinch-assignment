@@ -1,8 +1,12 @@
 .currencydiv {
-  /* border: 5px solid gold; */
   width: 450px;
   margin: 0 auto;
-  /* overflow: hidden; */
+}
+
+.inputDiv {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
 }
 
 .inputBar {
@@ -17,13 +21,8 @@
   display: flex;
   border-top-left-radius: 8px;
   border-bottom-left-radius: 8px;
-  /* text-align: center; */
 }
-.inputDiv {
-  display: flex;
-  flex-wrap: nowrap;
-  flex-direction: row;
-}
+
 .submitButton {
   width: 20%;
   border-top-right-radius: 8px;

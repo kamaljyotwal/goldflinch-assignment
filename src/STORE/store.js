@@ -1,6 +1,7 @@
 import { makeAutoObservable } from "mobx";
 
 class MainStore {
+
     counter = 0;
     curtime = ''
     constructor() {
@@ -13,6 +14,7 @@ class MainStore {
         this.counter > 0 && this.counter--;
     }
     // ===================================================
+
     updateCurrentTime = () => {
         const today = new Date()
         this.curtime = `${today.getHours()}h: ${today.getMinutes()}m: ${today.getSeconds()}s: ${today.getMilliseconds()}ms`
